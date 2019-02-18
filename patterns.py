@@ -4,7 +4,7 @@ import sys
 def find_all_patterns(T):
     # histogram
     hist = {col:T[col].value_counts() for col in T.columns}
-    print(hist)
+    # print(hist)
     # for each column in the csv
     for k, v in hist.items():
         col_hist = hist[k]
@@ -41,12 +41,12 @@ def L1_pattern(k):
             pttrn.append(ch)
             prev_n = 1
         prev_c = ch
-	remove_enclosing(pttrn)
+    # remove_enclosing(pttrn)
     return pttrn
 
-def remove_enclosing(pttrn):
-	if(check_enclosing(ptrn)):
-		for i in range(len(k)):
+# def remove_enclosing(pttrn):
+# 	if(check_enclosing(ptrn)):
+# 		for i in range(len(k)):
 
 def get_char_class(ch):
     if (ch.isdigit()):
