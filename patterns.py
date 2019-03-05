@@ -1,13 +1,15 @@
 import sys
+from main import sus_disguised
 
-
-def find_all_patterns(T):
+def find_all_patterns(T,sus_dis_values):
+    # print(list(T))
     # histogram
     hist = {col:T[col].value_counts() for col in T.columns}
     # print(hist)
-    min_num_ptrns = 0
+    min_num_ptrns = 5
     # for each column in the csv
     for k, v in hist.items():
+        # print(k)
         col_hist = hist[k]
         # ptrns_vec contains pattern as a directory
         # pttrns_hist contains pattern string : frequency
@@ -30,17 +32,21 @@ def find_all_patterns(T):
         dominating_pttrns = determine_dominating_patterns(pttrns_hist)
         # print(dominating_pttrns)
         sus_dis = []
-        for k, v in col_hist.items():
-            if v <= 1:
+        for k2, v2 in col_hist.items():
+            # print(k2,v2)
+            # common_Strings are strings have more than one frequency
+            if v2 <= 1:
                 continue
-            test_ptrn = get_cell_pttrn(k, AGG_Level)
-            value = dominating_pttrns.get(test_ptrn,0)
-            if value == 0:
+            test_ptrn = get_cell_pttrn(k2, AGG_Level)
+            value = dominating_pttrns.get(test_ptrn,123)
+            if value == 123:
                 print("Pattern not found ..\n")
                 sys.exit(1)
             elif not value:
-                sus_dis.append(k)
-        print(sus_dis)
+                sus_dis = sus_disguised(k, k2, 1.0, v2, "SYN")
+                if sus_dis not in sus_dis_values:
+                    sus_dis_values.append(sus_dis)
+    return sus_dis_values
     # print(T['a'].value_counts().get(1))
 
 def get_cell_pttrn(k, AGG_Level):
