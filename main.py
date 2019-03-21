@@ -12,11 +12,12 @@ class sus_disguised:
     def __str__(self):
         return str(self.__dict__)
     def __eq__(self, other):
-        return self.__dict__ == other.__dict__
+        return self.attr_name == other.attr_name and self.value == other.value
 
 import patterns
 import DV_Detector
 import RandDMVD
+import OD
 
 def main():
     # check arguments
@@ -37,14 +38,14 @@ def main():
         try:
             os.makedirs(out_directory)
         except OSError as e:
-            print("Error creating directory!\n")
+            print("Error creating directory!")
             sys.exit(1)
 
     #check input csv
     try:
         T = pd.read_csv(table_name, dtype=str)
     except OSError as e:
-        print("Error reading csv!\n")
+        print("Error reading csv!")
         sys.exit(1)
 
     #histogram
@@ -53,14 +54,23 @@ def main():
     sus_dis_values = []
 
     if tool_id == '1':
-        # sus_dis_values = patterns.find_all_patterns(T, sus_dis_values)
+        sus_dis_values = patterns.find_all_patterns(T, sus_dis_values)
         sus_dis_values = DV_Detector.check_non_conforming_patterns(T, sus_dis_values)
     elif tool_id == '2':
         sus_dis_values = RandDMVD.find_disguised_values(T, sus_dis_values)
+    elif tool_id == '3':
+        sus_dis_values = OD.detect_outliers(T, sus_dis_values)
+    elif tool_id == '4':
+        sus_dis_values = patterns.find_all_patterns(T, sus_dis_values)
+        sus_dis_values = DV_Detector.check_non_conforming_patterns(T, sus_dis_values)
+        sus_dis_values = RandDMVD.find_disguised_values(T, sus_dis_values)
+        sus_dis_values = OD.detect_outliers(T, sus_dis_values)
     else:
-        print("3")
+        print("Unkown option ..",tool_id)
+        sys.exit(1)
 
-    # Print_output_data(out_directory, table_name, sus_dis_values)
+
+    Print_output_data(out_directory, table_name, sus_dis_values)
 
 def Print_output_data(out_directory, table_name, sus_dis_values):
 

@@ -23,6 +23,7 @@ def find_disguised_values(T, sus_dis_values):
         largest_DV = 0
         col_hist = hist[KK[i]]
         most_com  = sorted(col_hist.items(), key=lambda kv: kv[1], reverse = True)
+        # print(most_com)
         for k, v in most_com:
             # print(k,v)
             if v == 1:
@@ -34,15 +35,17 @@ def find_disguised_values(T, sus_dis_values):
             DV_Score = len(Temp_T) / PT_num_rows * corr
             # print(corr)
             if DV_Score > largest_DV:
-                dis_value = sus_disguised(i, k, DV_Score, v, "Rand")
+                dis_value = sus_disguised(KK[i], k, DV_Score, v, "Rand")
+                largest_DV = DV_Score
         if dis_value is not None:
             ratio1 = dis_value.frequency / len(Temp_T)
             ratio2 = len(Temp_hist) / len(Temp_T)
             # print(ratio1)
             # print(ratio2)
-            # print(dis_value.frequency)
+            # print(dis_value.value)
             if ratio1 > 0.01 and ratio2 > 0.01 and dis_value.frequency > 5:
-                sus_dis_values.append(dis_value);
+                if dis_value not in sus_dis_values:
+                    sus_dis_values.append(dis_value)
 
     return sus_dis_values
 
