@@ -1,3 +1,7 @@
+# 
+#  Zezhou Huang
+#  zhuang333@wisc.edu
+#
 import sys
 from main import sus_disguised
 
