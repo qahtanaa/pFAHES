@@ -1,4 +1,4 @@
-# 
+#
 #  Zezhou Huang
 #  zhuang333@wisc.edu
 #
@@ -14,6 +14,7 @@ def find_all_patterns(T,sus_dis_values):
     # for each column in the csv
     for k, v in hist.items():
         # print(k)
+        # print(v)
         col_hist = hist[k]
         # ptrns_vec contains pattern as a directory
         # pttrns_hist contains pattern string : frequency

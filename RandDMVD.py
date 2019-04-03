@@ -1,7 +1,7 @@
 #
 #  Zezhou Huang
 #  zhuang333@wisc.edu
-# 
+#
 import sys
 from main import sus_disguised
 
@@ -157,8 +157,8 @@ def Table_Index_RandDMVD(Temp_T):
         for j in range(number_of_cols ):
             row = []
             for ii in range(number_of_cols):
-                row.append(Temp_T[i][ii].lower())
-            SS = Temp_T[i][j].lower()
+                row.append(str(Temp_T[i][ii]).lower())
+            SS = str(Temp_T[i][j]).lower()
             if SS == "" or SS == "null":
                 value = m_tablehist[j].get("NULL",0)
                 if value == 0:
