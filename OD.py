@@ -1,7 +1,7 @@
 #
 #  Zezhou Huang
 #  zhuang333@wisc.edu
-# 
+#
 import sys
 from main import sus_disguised
 
@@ -26,7 +26,7 @@ def detect_outliers(T, sus_dis_values):
         min_val = sort_num[0]
         max_val = sort_num[-1]
         min_dist = std
-        max_score = 0.95
+        max_score = 0.99
         for i in range(len(sort_num) - 1):
             min_dist = min(min_dist, abs(sort_num[i] - sort_num[i+1]))
         h0 = compute_bandwidth(std, num_tuples)

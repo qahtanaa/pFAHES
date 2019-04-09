@@ -1,7 +1,7 @@
 #
 #  Zezhou Huang
 #  zhuang333@wisc.edu
-# 
+#
 import sys
 import os
 import pandas as pd
@@ -47,7 +47,7 @@ def main():
 
     #check input csv
     try:
-        T = pd.read_csv(table_name, dtype=str)
+        T = pd.read_csv(table_name, dtype=str, keep_default_na=False)
     except OSError as e:
         print("Error reading csv!")
         sys.exit(1)
