@@ -45,9 +45,9 @@ def find_disguised_values(T, sus_dis_values):
         if dis_value is not None:
             ratio1 = dis_value.frequency / len(Temp_T)
             ratio2 = len(Temp_hist[KK[i]]) / len(Temp_T)
-            print(ratio1)
-            print(ratio2)
-            print(dis_value.value)
+            # print(ratio1)
+            # print(ratio2)
+            # print(dis_value.value)
             if ratio1 > 0.01 and ratio2 > 0.01 and dis_value.frequency > 5:
                 if dis_value not in sus_dis_values:
                     sus_dis_values.append(dis_value)
