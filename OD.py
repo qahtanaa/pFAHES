@@ -1,9 +1,11 @@
 #
 #  Zezhou Huang
 #  zhuang333@wisc.edu
+#  Revised by aqahtan@hbku.edu.qa
 #
 import sys
 from main import sus_disguised
+import common
 
 def detect_outliers(T, sus_dis_values):
     # histogram
@@ -27,36 +29,41 @@ def detect_outliers(T, sus_dis_values):
         max_val = sort_num[-1]
         min_dist = std
         max_score = 0.99
+
         for i in range(len(sort_num) - 1):
             min_dist = min(min_dist, abs(sort_num[i] - sort_num[i+1]))
         h0 = compute_bandwidth(std, num_tuples)
-        f_max = compute_max_pdf(numeric_data, min_val, max_val, h0)
+        f_max = compute_max_pdf(numeric_data, min_val, max_val, h0, num_tuples)
         if min_dist <= h0:
             for k2, v2 in numeric_data.items():
                 if v2 <= 1:
                     continue
-                epdf = f_max
+                epdf = 0
                 for kk in range(4):
-                    h = h0 - (0.2 * kk *h0)
+                    h = h0 - (0.2 * kk * h0)
                     f_i = evaluate_pnt(numeric_data, k2, h, num_tuples)
-                    if epdf > f_i:
+                    if epdf < f_i:
                         epdf = f_i
                 score = max(f_max - epdf, 0) / f_max
-                # print(k2, score)
-                if score > max_score:
-                    sus_dis = sus_disguised(k, k2, score, v2, "OD")
+                if score > (1.0 - 1e-16):
+                    if int(k2) == k2:
+                        sus_dis = sus_disguised(k, str(int(k2)), score, v2, "OD")
+                    else:
+                        sus_dis = sus_disguised(k, str(k2), score, v2, "OD")
                     if sus_dis not in sus_dis_values:
                         sus_dis_values.append(sus_dis)
+                    else:
+                        common.add_detected_by_more_than_one_tool(sus_dis_values, sus_dis)
     return sus_dis_values
 
-def compute_max_pdf(col_profile, min_val, max_val, h0):
+def compute_max_pdf(col_profile, min_val, max_val, h0, S):
     n = 100
     eval_step = (max_val - min_val) / n
     max_pdf = 0
-    S = len(col_profile)
     for e_pnt in seq(min_val, max_val, eval_step):
         # print(e_pnt)
         pdf = evaluate_pnt(col_profile, e_pnt, h0, S)
+        # print(e_pnt, pdf, max_pdf)
         if (max_pdf < pdf):
             max_pdf = pdf
     return max_pdf;
@@ -73,7 +80,10 @@ def seq(start, stop, step=1):
 def evaluate_pnt(col_profile, x, h, S):
     sum = 0
     for k, v in col_profile.items():
-        sum += kernel_func((x - k) / h) / h * v
+        if k == x:
+            sum += kernel_func((x - k) / h) / h
+        else:
+            sum += kernel_func((x - k) / h) / h * v
         # print(sum)
     return sum / S
 

@@ -4,6 +4,7 @@
 #
 import sys
 from main import sus_disguised
+import common
 
 def find_disguised_values(T, sus_dis_values):
     # print(T)
@@ -51,6 +52,8 @@ def find_disguised_values(T, sus_dis_values):
             if ratio1 > 0.01 and ratio2 > 0.01 and dis_value.frequency > 5:
                 if dis_value not in sus_dis_values:
                     sus_dis_values.append(dis_value)
+                else: 
+                    common.add_detected_by_more_than_one_tool(sus_dis_values, dis_value)
 
     return sus_dis_values
 

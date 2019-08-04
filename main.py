@@ -18,6 +18,8 @@ class sus_disguised:
     def __eq__(self, other):
         return self.attr_name == other.attr_name and self.value == other.value
 
+
+
 import common
 import patterns
 import DV_Detector
@@ -29,7 +31,7 @@ def main():
     # for arg in sys.argv[1:]:
     if(len(sys.argv) != 4):
         print("Wrong number of arguments .. entered (",len(sys.argv),")")
-        print(sys.argv, file=sys.stderr)
+        # print(sys.argv, file=sys.stderr)
         print("Usage (",sys.argv[0],"): <data file name>",
               " <output directory name> <Tool ID>")
         sys.exit(1)
@@ -60,14 +62,14 @@ def main():
     sus_dis_values = []
 
     if tool_id == '1':
-        sus_dis_values = patterns.find_all_patterns(T, sus_dis_values)
+        sus_dis_values, ptrns = patterns.find_all_patterns(T, sus_dis_values)
         sus_dis_values = DV_Detector.check_non_conforming_patterns(T, sus_dis_values)
     elif tool_id == '2':
         sus_dis_values = RandDMVD.find_disguised_values(T, sus_dis_values)
     elif tool_id == '3':
         sus_dis_values = OD.detect_outliers(T, sus_dis_values)
     elif tool_id == '4':
-        sus_dis_values = patterns.find_all_patterns(T, sus_dis_values)
+        sus_dis_values, ptrns = patterns.find_all_patterns(T, sus_dis_values)
         sus_dis_values = DV_Detector.check_non_conforming_patterns(T, sus_dis_values)
         sus_dis_values = RandDMVD.find_disguised_values(T, sus_dis_values)
         sus_dis_values = OD.detect_outliers(T, sus_dis_values)
@@ -76,7 +78,9 @@ def main():
         sys.exit(1)
 
 
-    common.Print_output_data(out_directory, table_name, sus_dis_values)
+    common.print_output_data(out_directory, table_name, sus_dis_values)
+    common.print_output_data_json(out_directory, table_name, sus_dis_values, ptrns)
+    
 
 
 

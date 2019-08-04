@@ -12,6 +12,8 @@ def find_all_patterns(T,sus_dis_values):
     # print(hist)
     min_num_ptrns = 5
     # for each column in the csv
+    output_ptrns = dict()
+    output_ptrns.clear()
     for k, v in hist.items():
         # print(k)
         # print(v)
@@ -36,6 +38,7 @@ def find_all_patterns(T,sus_dis_values):
             pttrns, pttrns_hist = L_patterns(pttrns, pttrns_hist, 5)
         dominating_pttrns = determine_dominating_patterns(pttrns_hist)
         # print(dominating_pttrns)
+        output_ptrns[k] = pttrns_hist
         sus_dis = []
         for k2, v2 in col_hist.items():
             # print(k2,v2)
@@ -51,7 +54,7 @@ def find_all_patterns(T,sus_dis_values):
                 sus_dis = sus_disguised(k, k2, 1.0, v2, "SYN")
                 if sus_dis not in sus_dis_values:
                     sus_dis_values.append(sus_dis)
-    return sus_dis_values
+    return sus_dis_values, output_ptrns
     # print(T['a'].value_counts().get(1))
 
 def get_cell_pttrn(k, AGG_Level):
