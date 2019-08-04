@@ -22,7 +22,7 @@ Run the code
     
     python main.py Path_to_data_files/file_name.csv folder_for_results/ tool_code
 
-tool_code: 1 for detecting syntactical DMVs
-           2 for detecting DMVs that replace missing at random values 
-           3 for detecting numerical DMVs
+tool_code: 1 for detecting syntactical DMVs,
+           2 for detecting DMVs that replace missing at random values, 
+           3 for detecting numerical DMVs, and
            4 for detecting all types of DMVs
