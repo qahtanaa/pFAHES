@@ -3,7 +3,7 @@
 #  zhuang333@wisc.edu
 # 
 import sys
-from main import sus_disguised
+from fahes import sus_disguised
 
 def check_non_conforming_patterns(T, sus_dis_values):
     sus_dis_values = detect_single_char_strings(T, sus_dis_values)

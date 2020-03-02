@@ -27,8 +27,8 @@ def print_output_data(out_directory, table_name, sus_dis_values):
 
     if out_directory[-1] != '/':
         out_directory = out_directory + '/'
-    table_name.replace('\\', '/')
-    tabn = table_name.split('/')[-1]
+    t = table_name.replace('\\', '/')
+    tabn = t.split('/')[-1]
     f = open(out_directory + "DMV_" + tabn, "w")
     if len(sus_dis_values) < 1:
         print("nothing")
@@ -47,8 +47,8 @@ def print_output_data_json(out_directory, table_name, sus_dis_values, ptrns):
 
     if out_directory[-1] != '/':
         out_directory = out_directory + '/'
-    table_name.replace('\\', '/')
-    tabn = table_name.split('/')[-1]
+    t = table_name.replace('\\', '/')
+    tabn = t.split('/')[-1]
     output_f_name = out_directory + "DMV_" + tabn
     json_output_f_name = output_f_name.replace(".csv", ".json")
     output_data = dict()

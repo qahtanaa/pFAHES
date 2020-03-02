@@ -3,7 +3,7 @@
 #  zhuang333@wisc.edu
 #
 import sys
-from main import sus_disguised
+from fahes import sus_disguised
 import common
 
 def find_disguised_values(T, sus_dis_values):

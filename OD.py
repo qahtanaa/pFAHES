@@ -4,7 +4,7 @@
 #  Revised by aqahtan@hbku.edu.qa
 #
 import sys
-from main import sus_disguised
+from fahes import sus_disguised
 import common
 
 def detect_outliers(T, sus_dis_values):

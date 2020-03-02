@@ -3,7 +3,7 @@
 #  zhuang333@wisc.edu
 #
 import sys
-from main import sus_disguised
+from fahes import sus_disguised
 
 def find_all_patterns(T,sus_dis_values):
     # print(list(T))
