@@ -1,0 +1,45 @@
+10151-1::Status::U
+10151-1::Score::0
+10151-1::Ref_ID::-1
+10151-1::X::0
+10151-1::Y::0
+10151-1::ZipCodes::0
+12252-1::AP Test Takers::s
+12252-1::Total Exams Taken::s
+12252-1::Number of Exams with scores 3 4 or 5::s
+16834-1::Total Grads Num::-
+16834-1::Total Grads Num::s
+16834-1::Total Grads Pct of cohort::s
+16834-1::Total Regents Num::-
+16834-1::Total Regents Num::s
+16834-1::Total Regents Pct of cohort::s
+16834-1::Total Regents Pct of grads::s
+16834-1::Advanced Regents Num::-
+16834-1::Advanced Regents Num::s
+16834-1::Advanced Regents Pct of cohort::s
+16834-1::Advanced Regents Pct of grads::s
+16834-1::Regents w/o Advanced Num::-
+16834-1::Regents w/o Advanced Num::s
+16834-1::Regents w/o Advanced Pct of cohort::s
+16834-1::Regents w/o Advanced Pct of grads::s
+16834-1::Local Num::-
+16834-1::Local Num::s
+16834-1::Local Pct of cohort::s
+16834-1::Local Pct of grads::s
+16834-1::Still Enrolled Num::-
+16834-1::Still Enrolled Num::s
+16834-1::Still Enrolled Pct of cohort::s
+16834-1::Dropped Out Num::-
+16834-1::Dropped Out Num::s
+16834-1::Dropped Out Pct of cohort::s
+323-1::DEATHS::x
+323-1::AADR::*
+323-1::AADR::x
+3397-1::ontrack_year1_2013::N/A
+3397-1::graduation_rate_2013::N/A
+3397-1::college_career_rate_2013::N/A
+3397-1::ontrack_year1_2014::N/A
+3397-1::graduation_rate_2014::N/A
+3397-1::college_career_rate_2014::N/A
+3397-1::pct_stu_enough_variety_2014::N/A
+3397-1::pct_stu_safe_2014::N/A

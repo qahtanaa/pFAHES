@@ -1,0 +1,80 @@
+Mass1::issue_description::.
+Mass1::issue_description::.....
+Mass2::WPI_GRD_PK_CNT::0
+Mass2::WPI_GRD_K_CNT::0
+Mass2::WPI_GRD_1_CNT::0
+Mass2::WPI_GRD_2_CNT::0
+Mass2::WPI_GRD_3_CNT::0
+Mass2::WPI_GRD_4_CNT::0
+Mass2::WPI_GRD_5_CNT::0
+Mass2::WPI_GRD_6_CNT::0
+Mass2::WPI_GRD_7_CNT::0
+Mass2::WPI_GRD_8_CNT::0
+Mass2::WPI_GRD_9_CNT::0
+Mass2::WPI_GRD_10_CNT::0
+Mass2::WPI_GRD_11_CNT::0
+Mass2::WPI_GRD_12_CNT::0
+Mass2::WPI_GRD_SP_CNT::0
+Mass3::WPI_SPOP_FLNE_CNT::0
+Mass3::WPI_SPOP_FLNE_PCT::0%
+Mass3::WPI_SPOP_LEP_CNT::0
+Mass3::WPI_SPOP_LEP_PCT::0%
+Mass3::WPI_SPOP_SPED_CNT::0
+Mass3::WPI_SPOP_SPED_PCT::0%
+Mass3::WPI_SPOP_FLUNCH_CNT::0
+Mass3::WPI_SPOP_FLUNCH_PCT::0%
+Mass3::WPI_SPOP_FLUNCH_FR_CNT::0
+Mass3::WPI_SPOP_FLUNCH_FR_PCT::0%
+Mass3::WPI_SPOP_FLUNCH_RP_CNT::0
+Mass3::WPI_SPOP_FLUNCH_RP_PCT::0%
+Mass3::WPI_SPOP_HN_CNT::0
+Mass3::WPI_SPOP_HN_PCT::0%
+Mass4::ORG_CODE::0
+Mass5::ProviderPhone::6174798500x118
+Mass5::ProviderPhone::9999999999
+Mass5::Latitude::0
+Mass5::Longitude::0
+Mass6::Spec Ed. Grad Rate - Grad Cohort #::-
+Mass6::Spec Ed. Grad Rate - Grad Cohort #::NA
+Mass6::Spec Ed. Grad Rate - Grad #::-
+Mass6::Spec Ed. Grad Rate - Grad #::NA
+Mass6::Spec Ed. Grad Rate - Grad %::-
+Mass6::Spec Ed. Grad Rate - Grad %::NA
+Mass6::Spec Ed. Dropout - Enr #::NA
+Mass6::Spec Ed. Dropout - Enr #::-
+Mass6::Spec Ed. Dropout - Drop #::-
+Mass6::Spec Ed. Dropout - Drop #::NA
+Mass6::Spec Ed. Dropout - Drop %::-
+Mass6::Spec Ed. Dropout - Drop %::NA
+Mass6::LRE Ages 6-21 - Students #::NA
+Mass6::LRE Ages 6-21 - Full Incl #::-
+Mass6::LRE Ages 6-21 - Full Incl #::NA
+Mass6::LRE Ages 6-21 - Full Incl %::-
+Mass6::LRE Ages 6-21 - Full Incl %::NA
+Mass6::LRE Ages 3-5 - Students #::-
+Mass6::LRE Ages 3-5 - Students #::NA
+Mass6::LRE Ages 3-5 - Full Incl #::-
+Mass6::LRE Ages 3-5 - Full Incl #::N/A
+Mass6::LRE Ages 3-5 - Full Incl #::NA
+Mass6::LRE Ages 3-5 - Full Incl %::-
+Mass6::Cohort Completion Year::-
+Mass6::Cohort Completion Year::All Indica
+Mass6::Cohort Completion Year::NA
+Mass6::Substantial growth of knowledge & skills::-
+Mass6::Substantial growth of knowledge & skills::NA
+Mass6::Substantial growth of knowledge & skills::N/A
+Mass6::Survey Period::-
+Mass6::Survey Period::NA
+Mass6::Surv Meet Std #::-
+Mass6::Surv Meet Std #::NA
+Mass6::Surv Meet Std #::NR
+Mass6::Surv Meet Std %::-
+Mass6::Surv Meet Std %::NA
+Mass6::Surv Meet Std %::NR
+Mass6::Sch Yr Rev::NA
+Mass6::# of Students Engaged::-
+Mass6::# of Students Engaged::NA
+Mass6::# of Students Engaged::NR
+Mass6::Dist Rate::-
+Mass6::Dist Rate::NA
+Mass6::Dist Rate::NR

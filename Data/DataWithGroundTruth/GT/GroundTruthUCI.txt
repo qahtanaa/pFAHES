@@ -1,0 +1,21 @@
+adult::workclass::?
+adult::education::Some-college
+adult::occupation::?
+adult::capital-gain::0
+adult::capital-loss::0
+adult::native-country::?
+elnino::zon.winds::.
+elnino::mer.winds::.
+elnino::humidity::.
+elnino::air temp.::.
+elnino::s.s.temp.::.
+pima-indians-diabetes::Plasma glucose concentration::0
+pima-indians-diabetes::Diastolic blood pressure::0
+pima-indians-diabetes::Triceps skin fold thickness::0
+pima-indians-diabetes::2-Hour serum insulin::0
+pima-indians-diabetes::Body mass index::0
+tao::zon.winds::.
+tao::mer.winds::.
+tao::humidity::.
+tao::air temp.::.
+tao::s.s.temp.::.
